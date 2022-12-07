@@ -19,4 +19,9 @@ export class PokemonService {
   getAll(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(this.API_URL + this.url)
   }
+
+  remove(id:number): Observable<any>{
+    return this.http.delete<any>(this.API_URL + this.url + `${id}/`)
+  }
+
 }

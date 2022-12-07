@@ -5,18 +5,66 @@
       <tr class="tui-table__tr tui-table__tr_border_none">
         <th class="tui-table__th tui-table__th_first">Id</th>
         <th class="tui-table__th">Название</th>
-        <th class="tui-table__th tui-table__th_last">Описание</th>
+        <th class="tui-table__th">Рост</th>
+        <th class="tui-table__th">Вес</th>
+        <th class="tui-table__th">Тэги</th>
+        <th class="tui-table__th">Умения</th>
+        <th class="tui-table__th">Уровень</th>
+        <th class="tui-table__th">Здоровье</th>
+        <th class="tui-table__th">Урон</th>
+        <th class="tui-table__th">Защита</th>
+        <th class="tui-table__th">Выносливость</th>
+        <th class="tui-table__th">Скорость</th>
+        <th class="tui-table__th ">Описание</th>
+        <th class="tui-table__th tui-table__th_last">Действие</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let pokemon of pokemons" class="tui-table__tr tui-table__tr_border_none">
         <td class="tui-table__td tui-table__td_first">{{pokemon.id}}</td>
         <td class="tui-table__td">{{pokemon.name}}</td>
-        <td class="tui-table__td tui-table__td_last">{{pokemon.description}}</td>
+        <td class="tui-table__td">{{pokemon.height}}</td>
+        <td class="tui-table__td">{{pokemon.weight}}</td>
+        <td class="tui-table__td">{{pokemon.tags.join(',')}}</td>
+        <td class="tui-table__td">{{pokemon.abilities.join(',')}}</td>
+        <td class="tui-table__td">{{pokemon.level}}</td>
+        <td class="tui-table__td">{{pokemon.hp}}</td>
+        <td class="tui-table__td">{{pokemon.attack}}</td>
+        <td class="tui-table__td">{{pokemon.defend}}</td>
+        <td class="tui-table__td">{{pokemon.stamina}}</td>
+        <td class="tui-table__td">{{pokemon.spd}}</td>
+        <td class="tui-table__td ">{{pokemon.description}}</td>
+        <td class="tui-table__td tui-table__td_last">
+          <button
+            [routerLink]="[pokemon.id]"
+            tuiIconButton
+            type="button"
+            icon="tuiIconEdit"
+            class="tui-space_right-3"
+            size="s"
+          ></button>
+          <button
+            tuiIconButton
+            type="button"
+            icon="tuiIconTrash"
+            size="s"
+            appearance="danger"
+            (click)="onDelete(pokemon.id)"
+          >
+            </button>
+        </td>
+
       </tr>
       </tbody>
     </table>
-    <button routerLink='new' class="pokemon-list__button">Создать покемона</button>
+    <button
+      routerLink='new'
+      tuiButton
+      type="button"
+      class="tui-space_right-3 tui-space_bottom-3"
+    >
+      Создать покемона
+    </button>
   </div>
 </div>
 
