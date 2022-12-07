@@ -1,0 +1,45 @@
+<div *ngIf="!isLoading; else loading">
+  <div class="tag-list">
+    <table class="tui-table">
+      <thead>
+      <tr class="tui-table__tr tui-table__tr_border_none">
+        <th class="tui-table__th tui-table__th_first">Id</th>
+        <th class="tui-table__th">Название</th>
+        <th class="tui-table__th">Цвет</th>
+        <th class="tui-table__th tui-table__th_last">Действие</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tag of tags" class="tui-table__tr tui-table__tr_border_none">
+        <td class="tui-table__td tui-table__td_first">{{tag.id}}</td>
+        <td class="tui-table__td">{{tag.name}}</td>
+        <td class="tui-table__td">
+          <div class="tag-list__color" [style.background]="tag.color"></div>
+        </td>
+        <td class="tui-table__td tui-table__td_last">
+          <button
+            [routerLink]="[tag.id]"
+            tuiIconButton
+            type="button"
+            icon="tuiIconEdit"
+            class="tui-space_right-3"
+            size="s"
+          ></button>
+          <button
+            tuiIconButton
+            type="button"
+            icon="tuiIconTrash"
+            size="s"
+            appearance="danger"
+            (click)="onDelete(tag.id)"
+            [showLoader] = "deletion.has(tag.id)"
+          ></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button routerLink='new'>Создать тэг</button>
+  </div>
+</div>
+
+<ng-template #loading class="text-center">Загрузка тэгов...</ng-template>

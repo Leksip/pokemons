@@ -1,0 +1,43 @@
+<div class="tag-form">
+<!--  Тернарный оператор-->
+  <h1>{{tagId === 'new' ? 'Создание' : 'Редактирование'}} тэга</h1>
+  <form [formGroup]='form' (ngSubmit)="onSubmit()">
+    <div>
+      <tui-input formControlName="name">
+        Название*
+        <input
+          tuiTextfield
+          type="text"
+        />
+      </tui-input>
+      <div class="error" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+        <small class="error__info">
+          Поле обязательное для ввода
+        </small>
+      </div>
+    </div>
+<!--    TODO Запретить ввод текста от юзера вместо цвета-->
+    <div>
+      <tui-input-color
+        class="b-form"
+        [colors]="palette"
+        formControlName="color"
+      >
+        Цвет*
+      </tui-input-color>
+      <div class="error" *ngIf="form.get('color')?.invalid && form.get('color')?.touched">
+        <small class="error__info">
+          Поле обязательное для ввода
+        </small>
+      </div>
+    </div>
+    <button
+      tuiButton
+      type="submit"
+      [disabled]="form.invalid"
+      [showLoader] = isSaving
+    >
+      {{tagId === 'new' ? 'Создать' : 'Редактировать'}}
+    </button>
+  </form>
+</div>

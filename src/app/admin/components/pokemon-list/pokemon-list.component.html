@@ -1,0 +1,24 @@
+<div *ngIf="!isLoading; else loading">
+  <div class="pokemon-list">
+    <table class="tui-table">
+      <thead>
+      <tr class="tui-table__tr tui-table__tr_border_none">
+        <th class="tui-table__th tui-table__th_first">Id</th>
+        <th class="tui-table__th">Название</th>
+        <th class="tui-table__th tui-table__th_last">Описание</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pokemon of pokemons" class="tui-table__tr tui-table__tr_border_none">
+        <td class="tui-table__td tui-table__td_first">{{pokemon.id}}</td>
+        <td class="tui-table__td">{{pokemon.name}}</td>
+        <td class="tui-table__td tui-table__td_last">{{pokemon.description}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button routerLink='new' class="pokemon-list__button">Создать покемона</button>
+  </div>
+</div>
+
+<ng-template #loading class="text-center">Загрузка покемонов...</ng-template>
+

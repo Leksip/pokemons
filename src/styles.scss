@@ -1,0 +1,21 @@
+body{
+  background: #f6f8fc;
+}
+
+.t-wrapper[data-appearance='danger'] {
+    background: #FF3041;
+    color: #fff;
+
+    &[data-state='hovered'] {
+      background: #FF5B47;
+    }
+
+    &[data-state='pressed'] {
+      background: #FF5B2E;
+    }
+
+    &[data-state='disabled'] {
+      background: #FF8986;
+    }
+  }
+

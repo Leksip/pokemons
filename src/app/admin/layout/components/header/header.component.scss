@@ -1,0 +1,33 @@
+.header {
+  &__nav-list {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__nav-link {
+    font-size: 35px;
+    color: rgba(0, 68, 14, 0.48);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .9;
+    transition: 0.2s all;
+
+    &:after {
+      display: block;
+      margin: 0 auto;
+      content: '';
+      width: 0;
+      height: 2px;
+      background: #6db36a;
+      border-radius: 21px;
+      transition: 0.2s all;
+    }
+
+    &:hover, :active {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
