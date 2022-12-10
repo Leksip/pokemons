@@ -16,12 +16,24 @@ export class PokemonService {
   ) {
   }
 
+  getById(id: number): Observable<Pokemon> {
+    return this.http.get<Pokemon>(this.API_URL + this.url + `${id}/`)
+  }
+
   getAll(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(this.API_URL + this.url)
   }
 
-  remove(id:number): Observable<any>{
+  remove(id: number): Observable<any> {
     return this.http.delete<any>(this.API_URL + this.url + `${id}/`)
+  }
+
+  create(pokemon: any): Observable<Pokemon> {
+    return this.http.post<Pokemon>(this.API_URL + this.url, pokemon)
+  }
+
+  update(pokemon: any, id: number): Observable<Pokemon> {
+    return this.http.put<Pokemon>(this.API_URL + this.url + `${id}/`, pokemon)
   }
 
 }

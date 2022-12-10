@@ -1,9 +1,11 @@
+import {Tag} from "./tag";
+
 export class Pokemon {
   readonly id: number;
   name: string;
   height: string;
   weight: string;
-  tags: number[];
+  tags: Tag[];
   description: string;
   abilities: string[];
   level:number;
@@ -12,4 +14,6 @@ export class Pokemon {
   defend: number;
   stamina:number;
   spd:number;
+  staticImageUrl?: string;
+  dynamicImageUrl?: string;
 }

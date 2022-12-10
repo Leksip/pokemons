@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {TuiInputModule} from "@taiga-ui/kit";
-import {TuiButtonModule} from "@taiga-ui/core";
+import {TuiDataListWrapperModule, TuiInputModule, TuiMultiSelectModule} from "@taiga-ui/kit";
+import {TuiButtonModule, TuiDataListModule} from "@taiga-ui/core";
 
 
 
@@ -11,10 +11,17 @@ import {TuiButtonModule} from "@taiga-ui/core";
     CommonModule,
     TuiInputModule,
     TuiButtonModule,
+    TuiMultiSelectModule,
+    TuiDataListWrapperModule,
+    TuiDataListModule,
   ],
   exports: [
     TuiInputModule,
     TuiButtonModule,
+    TuiMultiSelectModule,
+    TuiDataListWrapperModule,
+    TuiDataListModule,
+
   ]
 })
 export class SharedModule { }

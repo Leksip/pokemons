@@ -25,7 +25,11 @@
         <td class="tui-table__td">{{pokemon.name}}</td>
         <td class="tui-table__td">{{pokemon.height}}</td>
         <td class="tui-table__td">{{pokemon.weight}}</td>
-        <td class="tui-table__td">{{pokemon.tags.join(',')}}</td>
+        <td class="tui-table__td">
+          <div *ngFor="let tag of pokemon.tags">
+            {{tag.name}}
+          </div>
+        </td>
         <td class="tui-table__td">{{pokemon.abilities.join(',')}}</td>
         <td class="tui-table__td">{{pokemon.level}}</td>
         <td class="tui-table__td">{{pokemon.hp}}</td>
@@ -50,8 +54,9 @@
             size="s"
             appearance="danger"
             (click)="onDelete(pokemon.id)"
+            [showLoader]="deletion.has(pokemon.id)"
           >
-            </button>
+          </button>
         </td>
 
       </tr>

@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import {AdminModule} from "./admin/admin.module";
 import {PublicModule} from "./public/public.module";
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
       BrowserAnimationsModule,
       TuiRootModule,
       TuiDialogModule,
-      TuiAlertModule
+      TuiAlertModule,
+    FormsModule,
 ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]
