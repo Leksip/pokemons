@@ -50,13 +50,13 @@ export class TagFormComponent implements OnInit {
 
   update() {
     this.isSaving = true
-    const sand = {
+    const send = {
       tag: {
         name: this.form.get('name').value,
         color: this.form.get('color').value
       }
     }
-    this.tagService.update(sand, +this.tagId).subscribe({
+    this.tagService.update(send, +this.tagId).subscribe({
       next: () => {
         this.router.navigate(['/admin', 'tags-list'])
         this.isSaving = false

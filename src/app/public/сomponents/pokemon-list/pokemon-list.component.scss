@@ -1,7 +1,7 @@
 .pokemon-list{
   &__cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    grid-template-columns: repeat(auto-fit, 20%);
   }
   &__card{
   }

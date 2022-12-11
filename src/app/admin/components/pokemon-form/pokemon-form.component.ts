@@ -57,7 +57,9 @@ export class PokemonFormComponent implements OnInit {
           this.pokemonService.getById(+this.tagId).subscribe(
             pokemon => {
               this.form.patchValue(pokemon)
-              console.log(this.form.value)
+              pokemon.abilities.forEach(skill => {
+                this.skill.push(this.fb.control(skill))
+              })
             }
           )
         }
@@ -76,7 +78,7 @@ export class PokemonFormComponent implements OnInit {
 
   create() {
     this.isSaving = true
-    const sand = {
+    const send = {
       pokemon: {
         name: this.form.get('name').value,
         height: this.form.get('height').value,
@@ -92,7 +94,7 @@ export class PokemonFormComponent implements OnInit {
         spd: this.form.get('spd').value,
       }
     }
-    this.pokemonService.create(sand).subscribe({
+    this.pokemonService.create(send).subscribe({
       next: () => {
         this.isSaving = false
         this.router.navigate(['/admin', 'pokemon-list'])
@@ -113,7 +115,7 @@ export class PokemonFormComponent implements OnInit {
 
   update() {
     this.isSaving = true
-    const sand = {
+    const send = {
       pokemon: {
         name: this.form.get('name').value,
         height: this.form.get('height').value,
@@ -129,9 +131,10 @@ export class PokemonFormComponent implements OnInit {
         spd: this.form.get('spd').value,
       }
     }
-    this.pokemonService.update(sand, +this.tagId).subscribe(
+    this.pokemonService.update(send, +this.tagId).subscribe(
       {
         next: () => {
+          console.log(this.form)
           this.isSaving = false
           this.router.navigate(['/admin', 'pokemon-list'])
           this.alertService.open(`Покемон успешно отредактирован`, {
@@ -166,8 +169,7 @@ export class PokemonFormComponent implements OnInit {
   onSubmit() {
     if (this.tagId === 'new') {
       this.create()
-    } else {
-      this.update()
-    }
+    } else this.update()
+
   }
 }
