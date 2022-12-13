@@ -10,7 +10,7 @@ import { PokemonFormComponent } from './components/pokemon-form/pokemon-form.com
 import {SharedModule} from "./shared/shared.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {TuiInputColorModule} from "@taiga-ui/addon-editor";
-import {TuiInputCountModule} from "@taiga-ui/kit";
+import {TuiInputCountModule, TuiInputFilesModule} from "@taiga-ui/kit";
 
 
 
@@ -23,15 +23,16 @@ import {TuiInputCountModule} from "@taiga-ui/kit";
   ],
   exports: [
   ],
-  imports: [
-    CommonModule,
-    AdminRouting,
-    LayoutModule,
-    SharedModule,
-    ReactiveFormsModule,
-    TuiInputColorModule,
-    TuiInputCountModule,
+    imports: [
+        CommonModule,
+        AdminRouting,
+        LayoutModule,
+        SharedModule,
+        ReactiveFormsModule,
+        TuiInputColorModule,
+        TuiInputCountModule,
+        TuiInputFilesModule,
 
-  ]
+    ]
 })
 export class AdminModule { }

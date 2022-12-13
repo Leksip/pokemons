@@ -1,11 +1,33 @@
 <div class="pokemon-list">
-  <ul class="pokemon-list__cards">
-    <li class="pokemon-list__card" *ngFor="let pokemon of pokemons">
-      <pok-pokemon-card
-        [pokemon]="pokemon"
-      ></pok-pokemon-card>
-    </li>
-  </ul>
+  <div class="container">
+    <div class="pokemon-list__cards">
+      <div class="pokemon-list__search">
+        <input type="text" placeholder="Search your Pokemon" class="pokemon-list__search-input">
+        <button
+          tuiButton
+          type="button"
+          icon="tuiIconSearch"
+          appearance="accent"
+          class="pokemon-list__search-button tui-space_right-1 tui-space_bottom-3"
+          size="s"
+        >
+        </button>
+      </div>
+      <ul class="pokemon-list__items">
+        <li class="pokemon-list__item" *ngFor="let pokemon of pokemons" (click)="onSelectPokemon(pokemon.id)">
+          <pok-pokemon-card
+            [pokemon]="pokemon"
+          ></pok-pokemon-card>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="pokemon-list__info">
+    <pok-pokemon-info
+    [pokemonId]="selectedPokemonId"
+    >
+    </pok-pokemon-info>
+  </div>
 </div>
 
 

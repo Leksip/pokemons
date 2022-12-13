@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Pokemon} from "../../../admin/models/pokemon";
+import {Tag} from "../../../admin/models/tag";
 
 @Component({
   selector: 'pok-pokemon-card',
@@ -8,9 +9,13 @@ import {Pokemon} from "../../../admin/models/pokemon";
 })
 export class PokemonCardComponent implements OnInit {
   @Input() pokemon: Pokemon
-  constructor() { }
+  tags: Tag[] = []
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.tags = this.pokemon.tags
   }
 
 }

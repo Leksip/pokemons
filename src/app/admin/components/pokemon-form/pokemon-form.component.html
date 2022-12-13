@@ -1,6 +1,6 @@
 <div class="pokemon-form">
   <h1 class="pokemon-form__title">
-    {{tagId === 'new' ? 'Создание' : 'Редактирование'}} покемона
+    {{pokemonId === 'new' ? 'Создание' : 'Редактирование'}} покемона
   </h1>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
@@ -149,7 +149,7 @@
         Добавить умение *
       </button>
       <div *ngFor="let abilities of skill.controls; let idx = index">
-        <tui-input [formControlName] ="idx">
+        <tui-input [formControlName]="idx">
           Умение{{idx + 1}}*
           <input
             tuiTextfield
@@ -165,15 +165,33 @@
         </div>
       </div>
     </div>
+    <div *ngIf="!form.get('staticImageUrl').value; else pokemonImage">
+      <tui-input-files
+        accept="image/*"
+        formControlName="staticImage"
+        (reject)="onReject($event)"
+      ></tui-input-files>
 
+      <tui-files class="tui-space_top-1">
+        <tui-file
+          *ngIf=" form.get('staticImage').valueChanges| async as file"
+          [file]="file"
+          (removed)="removeFile()"
+        ></tui-file>
+      </tui-files>
+    </div>
+
+    <ng-template #pokemonImage>
+      <img [src]="form.get('staticImageUrl').value" [alt]="form.get('name').value">
+      <button type="button" (click)="onRemoveImage()">Удалить изображение</button>
+    </ng-template>
     <button
       tuiButton
       type="submit"
       [disabled]="form.invalid"
-      [showLoader] = isSaving
+      [showLoader]=isSaving
     >
-      {{tagId === 'new' ? 'Создать' : 'Редактировать'}}
+      {{pokemonId === 'new' ? 'Создать' : 'Редактировать'}}
     </button>
-    <!--    <button (click)="test()">TEST</button>-->
   </form>
 </div>

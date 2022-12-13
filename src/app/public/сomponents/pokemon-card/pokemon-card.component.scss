@@ -2,9 +2,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px 20px;
+  padding: 40px 15px 15px;
   border-radius: 30px;
-  margin: 10px;
   background: #fff;
   box-shadow: #ededed 0 10px 10px;
+  margin: 10px;
+  margin-top: 60px;
+  &__title{
+    color: #011030;
+    margin: 5px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  &__tags{
+    display: flex;
+    justify-content: space-around;
+  }
+  &__tag{
+    padding: 3px 7px;
+    color: black;
+    margin: 5px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    opacity: 0.8;
+    text-align: center;
+    border-radius: 5px;
+  }
 }

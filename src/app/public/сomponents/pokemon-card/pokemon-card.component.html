@@ -1,4 +1,7 @@
 <div class="pokemon-card">
+  <img [src]="pokemon.staticImageUrl" alt="" class="pokemon-card__img">
   <h3 class="pokemon-card__title">{{pokemon.name}}</h3>
-  <p class="pokemon-card__description">{{pokemon.description}}</p>
+  <div class="pokemon-card__tags">
+    <p class="pokemon-card__tag" *ngFor="let tag of tags" [style.background]="tag.color">{{tag.name}}</p>
+  </div>
 </div>

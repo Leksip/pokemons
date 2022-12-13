@@ -1,8 +1,77 @@
-.pokemon-list{
-  &__cards{
+.container {
+  width: 100%;
+  padding: 0 10vw;
+}
+
+.pokemon-list {
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    margin-right: 350px;
+  }
+
+  &__search {
+    position: relative;
+    margin: 30px 0;
+    width: 100%;
+  }
+
+  &__search-input {
+    width: 100%;
+    box-shadow: #ededed 0 10px 10px;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  &__search-button {
+    position: absolute;
+    right: 5px;
+    top: 20%;
+    box-shadow: #ff535088 5px 5px 15px;
+  }
+
+  &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 20%);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+    gap: 10px;
   }
-  &__card{
-  }
+
+//  &__info {
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: center;
+//    align-items: center;
+//    width: 320px;
+//    height: 82vh;
+//    position: fixed;
+//    bottom: 0;
+//    right: calc(10vw - 20px);
+//    transition: all .25s;
+//
+//
+//    border-radius: 20px 20px 0 0;
+//    box-shadow: #ededed 0 10px 10px;
+//    padding: 15px;
+//    background-color: white;
+//
+//    &::before {
+//      position: absolute;
+//      width: 130px;
+//      height: 200px;
+//      content: '';
+//      background: url("https://js-pokedex-virid.vercel.app/src/no-pokemon-selected-image.png") no-repeat center;
+//      top: -20%;
+//    }
+//  }
+//
+//  &__info-text {
+//    line-height: 25px;
+//    text-align: center;
+//    font-size: 18px;
+//    color: #8F9396;
+//  }
+//}
+//.active{
+//  transform: translateY(200%);
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PokemonService} from "../../../admin/services/pokemon.service";
 import {Pokemon} from "../../../admin/models/pokemon";
 
@@ -8,17 +8,27 @@ import {Pokemon} from "../../../admin/models/pokemon";
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent implements OnInit {
-pokemons: Pokemon[] = []
+  pokemons: Pokemon[] = []
+  selectedPokemonId: number
+
   constructor(
     private readonly pokemonService: PokemonService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.pokemonService.getAll().subscribe(
-      pokemon =>{
+      pokemon => {
         this.pokemons = pokemon
       }
     )
+  }
+
+  onSelectPokemon(id: number) {
+    if (this.selectedPokemonId === id) {
+      this.selectedPokemonId = null
+    } else
+      this.selectedPokemonId = id
   }
 
 }

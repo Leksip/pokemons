@@ -1,9 +1,10 @@
 <div *ngIf="!isLoading; else loading">
   <div class="pokemon-list">
-    <table class="tui-table">
+    <table class="pokemon-list__table tui-table">
       <thead>
       <tr class="tui-table__tr tui-table__tr_border_none">
         <th class="tui-table__th tui-table__th_first">Id</th>
+        <th class="tui-table__th">Изображение</th>
         <th class="tui-table__th">Название</th>
         <th class="tui-table__th">Рост</th>
         <th class="tui-table__th">Вес</th>
@@ -22,6 +23,18 @@
       <tbody>
       <tr *ngFor="let pokemon of pokemons" class="tui-table__tr tui-table__tr_border_none">
         <td class="tui-table__td tui-table__td_first">{{pokemon.id}}</td>
+        <td class="tui-table__td">
+          <img
+            [src]="pokemon.staticImageUrl"
+            [alt]="pokemon.name"
+            *ngIf="pokemon.staticImageUrl; else pokemonImagePlug"
+          >
+        </td>
+
+        <ng-template #pokemonImagePlug >
+          <img src="assets/img/pokemon-image-plug.jpg" alt="Заглушка">
+        </ng-template>
+
         <td class="tui-table__td">{{pokemon.name}}</td>
         <td class="tui-table__td">{{pokemon.height}}</td>
         <td class="tui-table__td">{{pokemon.weight}}</td>

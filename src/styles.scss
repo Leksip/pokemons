@@ -1,5 +1,8 @@
+@import "src/assets/styles/reset";
+
+
 body{
-  background: #f6f8fc;
+  background: #F6F8FC url('https://js-pokedex-virid.vercel.app/src/pokeball-icon.png') no-repeat -180px -80px ;
 }
 
 .t-wrapper[data-appearance='danger'] {
@@ -18,4 +21,10 @@ body{
       background: #FF8986;
     }
   }
+.html {
+  box-sizing: border-box;
+}
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}

@@ -1,0 +1,12 @@
+<div class="pokemon-info">
+  <ng-container *ngIf="!isLoading; else loading">
+    <div *ngIf="pokemon">
+      {{pokemon | json}}
+    </div>
+    <div *ngIf="!pokemon">
+      Покемона нет
+    </div>
+  </ng-container>
+  <ng-template #loading>Идет загрузка...</ng-template>
+</div>
+
