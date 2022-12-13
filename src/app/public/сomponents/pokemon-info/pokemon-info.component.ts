@@ -1,6 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Pokemon} from "../../../admin/models/pokemon";
 import {PokemonService} from "../../../admin/services/pokemon.service";
+import {Tag} from "../../../admin/models/tag";
 
 @Component({
   selector: 'pok-pokemon-info',
@@ -13,6 +14,7 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
 
   isLoading = false
   pokemon: Pokemon = null
+  tags: Tag[] = []
 
   constructor(private readonly pokemonService: PokemonService) {
   }
@@ -24,7 +26,10 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
     if ('pokemonId' in changes) {
       if (this.pokemonId) {
         this.getPokemonById()
-      } else this.pokemon = null
+      } else {
+        this.pokemon = null
+        this.tags = []
+      }
     }
 
   }
@@ -34,7 +39,8 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
     //получить покемона по ID через сервис
     this.pokemonService.getById(this.pokemonId).subscribe(pokemon => {
         this.pokemon = pokemon
-      this.isLoading = false
+        this.isLoading = false
+        this.tags = pokemon.tags
       }
     )
   }

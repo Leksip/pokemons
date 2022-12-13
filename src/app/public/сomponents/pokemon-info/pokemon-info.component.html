@@ -1,12 +1,72 @@
 <div class="pokemon-info">
-  <ng-container *ngIf="!isLoading; else loading">
-    <div *ngIf="pokemon">
-      {{pokemon | json}}
+  <ng-container *ngIf="!isLoading; else loading" class="pokemon-info__not-loading">
+
+    <div *ngIf="pokemon" class="pokemon-info__received wrapper">
+      <img [src]="pokemon.staticImageUrl" [alt]="pokemon.name" class="pokemon-info__image">
+      <h1 class="pokemon-info__received-name">{{pokemon.name}}</h1>
+      <div class="pokemon-info__received-tags">
+        <div class="pokemon-info__received-tag" *ngFor="let tag of tags"
+             [style.background]="tag.color">{{tag.name}}</div>
+      </div>
+      <h2 class="pokemon-info__received-description">
+        Pokedex Entry
+        <br>
+      </h2>
+        <p class="pokemon-info__received-description-grey">{{pokemon.description}}</p>
+      <div class="pokemon-info__received-parameters">
+        <div class="pokemon-info__received-weight">
+          <h2 class="pokemon-info__received-weight_title"></h2>
+          <p class="pokemon-info__received-weight_value"></p>
+        </div>
+        <div class="pokemon-info__received-height">
+          <h2 class="pokemon-info__received-height_title"></h2>
+          <p class="pokemon-info__received-height_value"></p>
+        </div>
+      </div>
+      <div class="pokemon-info__received-abilities">
+        <h2 class="pokemon-info__received-abilities_title"></h2>
+        <p class="pokemon-info__received-abilities_ability"></p>
+      </div>
+      <h2 class="pokemon-info__received-stats-title"></h2>
+      <div class="pokemon-info__received-stats">
+        <div class="pokemon-info__received-stat">
+          <div class="pokemon-info__received-stat-name_red"></div>
+          <p class="pokemon-info__received-stat-value"></p>
+        </div>
+        <div class="pokemon-info__received-stat">
+          <div class="pokemon-info__received-stat-name_orange"></div>
+          <p class="pokemon-info__received-stat-value"></p>
+        </div>
+        <div class="pokemon-info__received-stat">
+          <div class="pokemon-info__received-stat-name_yellow"></div>
+          <p class="pokemon-info__received-stat-value"></p>
+        </div>
+        <div class="pokemon-info__received-stat">
+          <div class="pokemon-info__received-stat-name_lightblue"></div>
+          <p class="pokemon-info__received-stat-value"></p>
+        </div>
+        <div class="pokemon-info__received-stat">
+          <div class="pokemon-info__received-stat-name_green"></div>
+          <p class="pokemon-info__received-stat-value"></p>
+        </div>
+        <div class="pokemon-info__received-stat">
+          <div class="pokemon-info__received-stat-name_purple"></div>
+          <p class="pokemon-info__received-stat-value"></p>
+        </div>
+        <div class="pokemon-info__received-stat">
+          <div class="pokemon-info__received-stat-name_blue"></div>
+          <p class="pokemon-info__received-stat-value"></p>
+        </div>
+      </div>
     </div>
-    <div *ngIf="!pokemon">
-      Покемона нет
+
+    <div *ngIf="!pokemon" class="pokemon-info__not-received wrapper">
+      <img src="https://js-pokedex-virid.vercel.app/src/no-pokemon-selected-image.png" alt="Заглушка"
+           class="pokemon-info__image-plug">
+      <p class="pokemon-info__not-received-text">Select a Pokemon <br>
+        to display here.</p>
     </div>
   </ng-container>
-  <ng-template #loading>Идет загрузка...</ng-template>
+  <ng-template #loading class="pokemon-info__loading wrapper"> Идет загрузка...</ng-template>
 </div>
 
