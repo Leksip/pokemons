@@ -14,7 +14,8 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
 
   isLoading = false
   pokemon: Pokemon = null
-  tags: Tag[] = []
+  tags: Tag[] = [];
+  total: number
 
   constructor(private readonly pokemonService: PokemonService) {
   }
@@ -41,7 +42,12 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
         this.pokemon = pokemon
         this.isLoading = false
         this.tags = pokemon.tags
+        this.getTotal()
       }
     )
+  }
+
+  getTotal() {
+    this.total = this.pokemon.spd + this.pokemon.stamina + this.pokemon.level + this.pokemon.hp + this.pokemon.attack + this.pokemon.defend
   }
 }

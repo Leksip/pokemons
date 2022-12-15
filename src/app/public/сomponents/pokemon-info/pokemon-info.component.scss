@@ -12,6 +12,7 @@
   border-radius: 20px 20px 0 0;
   box-shadow: #ededed 0 10px 10px;
   padding: 15px;
+  padding-top: 60px;
   background-color: white;
 }
 
@@ -31,14 +32,16 @@
 
   &__image {
     position: absolute;
-    width: 250px;
-    height: auto;
-    object-fit: cover;
-    top: -20%;
+    max-width: 350px;
+    max-height: 22vh;
+    object-fit: contain;
+    bottom: 77vh;
+    image-rendering: pixelated;
   }
 
   &__received {
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
   }
 
@@ -84,5 +87,132 @@
     margin: 5px;
     width: 100%;
   }
+
+  &__received-parameters {
+    width: 100%;
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+  }
+
+  &__received-parameter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+    margin-top: 15px;
+    color: #011030;
+    text-align: center;
+    font-size: 16px;
+
+    &_title {
+      margin: 5px;
+    }
+
+    &_value {
+      background-color: #F6F8FC;
+      padding: 8px 0;
+      border-radius: 30px;
+    }
+  }
+
+  &__received-abilities-title {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  &__received-abilities {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &_ability {
+      width: 100%;
+      background-color: #F6F8FC;
+      padding: 8px 0;
+      border-radius: 30px;
+      margin: 5px;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
+  &__received-stats-title {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    margin-top: 15px;
+  }
+
+  &__received-stats {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+
+  &__received-stat {
+    background: #F6F8FC;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 5px;
+
+  }
+
+  &__received-stat-name {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+
+  }
+
+  &__received-stat-value {
+    margin: 6px 0;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
+.red {
+  background: #DF2140;
+}
+
+.orange {
+  background: #FF994D;
+}
+
+.blue {
+  background: #7195DC;
+}
+
+.lightblue {
+  background: #85DDFF;
+}
+
+.green {
+  background: #96da83;
+}
+
+.purple {
+  background: #FB94A8
+}
+
+.yellow {
+  background: #eecd3d;
+}

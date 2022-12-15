@@ -3,24 +3,37 @@
   flex-direction: column;
   align-items: center;
   padding: 40px 15px 15px;
+  border: 2px solid white;
   border-radius: 30px;
   background: #fff;
   box-shadow: #ededed 0 10px 10px;
   margin: 10px;
   margin-top: 60px;
+  height: 150px;
+  position: relative;
+  transition: .2s all;
 
-  &__title{
+  &__id {
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    color: #8F9396;
+  }
+
+  &__title {
     color: #011030;
     margin: 5px;
     text-align: center;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
   }
-  &__tags{
+
+  &__tags {
     display: flex;
     justify-content: space-around;
   }
-  &__tag{
+
+  &__tag {
     padding: 3px 7px;
     color: black;
     margin: 5px;
@@ -30,5 +43,20 @@
     opacity: 0.8;
     text-align: center;
     border-radius: 5px;
+  }
+
+  img {
+    position: absolute;
+    top: -35%;
+    transition: .2s all;
+  }
+
+  &:hover {
+    border: 2px solid rgba(216, 216, 216, 0.76);
+
+    img {
+      transform: scale(1.05);
+      image-rendering: pixelated;
+    }
   }
 }
