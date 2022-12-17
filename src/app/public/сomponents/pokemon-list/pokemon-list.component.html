@@ -14,7 +14,8 @@
         </button>
       </div>
       <ul class="pokemon-list__items">
-        <li class="pokemon-list__item" *ngFor="let pokemon of pokemons" (click)="onSelectPokemon(pokemon.id)">
+        <li class="pokemon-list__item" *ngFor="let pokemon of pokemons"
+            (click)="onSelectPokemon(pokemon.id, pokemon.tags)">
           <pok-pokemon-card
             [pokemon]="pokemon"
           ></pok-pokemon-card>
@@ -24,11 +25,11 @@
   </div>
   <div class="pokemon-list__info">
     <pok-pokemon-info
-    [pokemonId]="selectedPokemonId"
+      [pokemonId]="selectedPokemonId"
     >
     </pok-pokemon-info>
   </div>
-  <div class="pokemon-list__info-mobile" [class.active]="selectedPokemonId">
+  <div class="pokemon-list__info-mobile" [style.background-color]="tagColor" [class.active]="selectedPokemonId">
     <pok-pokemon-info-mobile
       [pokemonId]="selectedPokemonId"
       (closeMenu)="closeMenu()"

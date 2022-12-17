@@ -62,9 +62,9 @@ export class PokemonFormComponent implements OnInit {
           this.pokemonService.getById(+this.pokemonId).subscribe(
             pokemon => {
               this.form.patchValue(pokemon)
-
               pokemon.abilities.forEach(skill => {
                 this.skill.push(this.fb.control(skill))
+                console.log(this.form.value)
               })
             }
           )
