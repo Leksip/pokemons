@@ -28,7 +28,13 @@
     >
     </pok-pokemon-info>
   </div>
-  <div class="pokemon-list__info-mobile" [class.active]="selectedPokemonId"></div>
+  <div class="pokemon-list__info-mobile" [class.active]="selectedPokemonId">
+    <pok-pokemon-info-mobile
+      [pokemonId]="selectedPokemonId"
+      (closeMenu)="closeMenu()"
+    >
+    </pok-pokemon-info-mobile>
+  </div>
 </div>
 
 

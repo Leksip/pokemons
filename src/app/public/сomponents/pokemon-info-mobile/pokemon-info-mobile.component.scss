@@ -1,0 +1,238 @@
+.container{
+  width: 100%;
+  height: 82vh;
+  position: fixed;
+  z-index: 3;
+  padding: 0 15px;
+  text-align: center;
+  bottom: 0;
+  border-radius: 20px 20px 0 0;
+  background-color: white;
+  box-shadow: #ededed 0 10px 10px;
+}
+
+.pokemon-info-mobile {
+  &__image {
+    position: absolute;
+    max-width: 350px;
+    max-height: 22vh;
+    object-fit: contain;
+    top: -1vh;
+    image-rendering: pixelated;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &__received {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 10px;
+    margin: 0 auto;
+    margin-top: 6vh;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &__received-name {
+    color: #011030;
+    margin: 5px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  &__received-tags {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  &__received-tag {
+    padding: 3px 7px;
+    color: black;
+    margin: 5px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    opacity: 0.8;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  &__received-description {
+    color: #011030;
+    margin: 5px;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__received-description-grey {
+    color: #8F9396;
+    font-size: 14px;
+    text-align: center;
+    margin: 5px;
+    width: 100%;
+  }
+
+  &__received-parameters {
+    width: 100%;
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+  }
+
+  &__received-parameter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+    margin-top: 15px;
+    color: #011030;
+    text-align: center;
+    font-size: 16px;
+
+    &_title {
+      margin: 5px;
+    }
+
+    &_value {
+      background-color: #F6F8FC;
+      padding: 8px 0;
+      border-radius: 30px;
+    }
+  }
+
+  &__received-abilities-title {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  &__received-abilities {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &_ability {
+      width: 100%;
+      background-color: #F6F8FC;
+      padding: 8px 0;
+      border-radius: 30px;
+      margin: 5px;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
+  &__received-stats-title {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    margin-top: 15px;
+  }
+
+  &__received-stats {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+
+  &__received-stat {
+    background: #F6F8FC;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 5px;
+
+  }
+
+  &__received-stat-name {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+
+  }
+
+  &__received-stat-value {
+    margin: 6px 0;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__close-button{
+    position: absolute;
+    top: 1vh;
+    right: 3vh;
+    width: 6vh;
+    height: 6vh;
+    z-index: 3;
+    cursor: pointer;
+  }
+  &__close-button-line{
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    height: 3px;
+
+    &:last-child {
+      transform: rotate(45deg);
+    }
+
+    &:first-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.red {
+  background: #DF2140;
+}
+
+.orange {
+  background: #FF994D;
+}
+
+.blue {
+  background: #7195DC;
+}
+
+.lightblue {
+  background: #85DDFF;
+}
+
+.green {
+  background: #96da83;
+}
+
+.purple {
+  background: #FB94A8
+}
+
+.yellow {
+  background: #eecd3d;
+}
+

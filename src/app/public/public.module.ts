@@ -7,13 +7,15 @@ import { PokemonCardComponent } from './сomponents/pokemon-card/pokemon-card.co
 import {FormsModule} from "@angular/forms";
 import {TuiButtonModule} from "@taiga-ui/core";
 import { PokemonInfoComponent } from './сomponents/pokemon-info/pokemon-info.component';
+import { PokemonInfoMobileComponent } from './сomponents/pokemon-info-mobile/pokemon-info-mobile.component';
 
 
 @NgModule({
   declarations: [
     PokemonListComponent,
     PokemonCardComponent,
-    PokemonInfoComponent
+    PokemonInfoComponent,
+    PokemonInfoMobileComponent
   ],
     imports: [
         CommonModule,

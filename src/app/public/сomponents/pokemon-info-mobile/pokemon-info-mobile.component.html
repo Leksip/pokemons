@@ -1,0 +1,77 @@
+<div class="pokemon-info-mobile">
+  <ng-container *ngIf="!isLoading; else loading" class="pokemon-info-mobile__not-loading">
+    <div class="pokemon-info-mobile__close-button" (click)="onCloseMenu()">
+      <span class="pokemon-info-mobile__close-button-line"></span>
+      <span class="pokemon-info-mobile__close-button-line"></span>
+    </div>
+    <div class="container">
+      <div *ngIf="pokemon" class="pokemon-info-mobile__received">
+        <img [src]="pokemon.staticImageUrl" [alt]="pokemon.name" class="pokemon-info-mobile__image">
+        <h1 class="pokemon-info-mobile__received-name">{{pokemon.name}}</h1>
+        <div class="pokemon-info-mobile__received-tags">
+          <div class="pokemon-info-mobile__received-tag" *ngFor="let tag of tags"
+               [style.background]="tag.color">{{tag.name}}</div>
+        </div>
+        <h2 class="pokemon-info-mobile__received-description">
+          Pokedex Entry
+          <br>
+        </h2>
+        <p class="pokemon-info-mobile__received-description-grey">{{pokemon.description}}</p>
+        <div class="pokemon-info-mobile__received-parameters">
+          <div class="pokemon-info-mobile__received-parameter">
+            <h2 class="pokemon-info-mobile__received-parameter_title">Height</h2>
+            <p class="pokemon-info-mobile__received-parameter_value">{{pokemon.height}}m</p>
+          </div>
+          <div class="pokemon-info-mobile__received-parameter">
+            <h2 class="pokemon-info-mobile__received-parameter_title">Weight</h2>
+            <p class="pokemon-info-mobile__received-parameter_value">{{pokemon.weight}}kg</p>
+          </div>
+        </div>
+
+        <h2 class="pokemon-info-mobile__received-abilities-title">Abilities</h2>
+        <div class="pokemon-info-mobile__received-abilities">
+          <div class="pokemon-info-mobile__received-abilities" *ngFor="let ability of pokemon.abilities">
+            <div class="pokemon-info-mobile__received-abilities_ability">{{ability}}</div>
+          </div>
+        </div>
+
+        <h2 class="pokemon-info-mobile__received-stats-title">Stats</h2>
+        <div class="pokemon-info-mobile__received-stats">
+          <div class="pokemon-info-mobile__received-stat">
+            <div class="pokemon-info-mobile__received-stat-name red">HP</div>
+            <p class="pokemon-info-mobile__received-stat-value">{{pokemon.hp}}</p>
+          </div>
+          <div class="pokemon-info-mobile__received-stat">
+            <div class="pokemon-info-mobile__received-stat-name orange">ATK</div>
+            <p class="pokemon-info-mobile__received-stat-value">{{pokemon.attack}}</p>
+          </div>
+          <div class="pokemon-info-mobile__received-stat">
+            <div class="pokemon-info-mobile__received-stat-name yellow">DEF</div>
+            <p class="pokemon-info-mobile__received-stat-value">{{pokemon.defend}}</p>
+          </div>
+          <div class="pokemon-info-mobile__received-stat">
+            <div class="pokemon-info-mobile__received-stat-name lightblue">CON</div>
+            <p class="pokemon-info-mobile__received-stat-value">{{pokemon.stamina}}</p>
+          </div>
+          <div class="pokemon-info-mobile__received-stat">
+            <div class="pokemon-info-mobile__received-stat-name green">SPD</div>
+            <p class="pokemon-info-mobile__received-stat-value">{{pokemon.spd}}</p>
+          </div>
+          <div class="pokemon-info-mobile__received-stat">
+            <div class="pokemon-info-mobile__received-stat-name purple">LvL</div>
+            <p class="pokemon-info-mobile__received-stat-value">{{pokemon.level}}</p>
+          </div>
+          <div class="pokemon-info-mobile__received-stat">
+            <div class="pokemon-info-mobile__received-stat-name blue">TOT</div>
+            <p class="pokemon-info-mobile__received-stat-value">{{total}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #loading class="pokemon-info-mobile__loading-text">
+    <div class="pokemon-info-mobile__loading wrapper"> Идет загрузка...</div>
+  </ng-template>
+
+</div>

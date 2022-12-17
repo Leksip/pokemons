@@ -31,4 +31,7 @@ export class PokemonListComponent implements OnInit {
       this.selectedPokemonId = id
   }
 
+  closeMenu() {
+    this.selectedPokemonId = null
+  }
 }
