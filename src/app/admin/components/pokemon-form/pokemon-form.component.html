@@ -204,14 +204,14 @@
     </div>
 
     <div class="pokemon-form__image-container">
-    <div *ngIf="!form.get('staticImageUrl').value; else pokemonImage">
+    <div *ngIf="!form.get('staticImageUrl').value; else pokemonImage" class="pokemon-form__image-container-input-img">
       <tui-input-files
         accept="image/*"
         formControlName="staticImage"
         (reject)="onReject($event)"
       ></tui-input-files>
 
-      <tui-files class="tui-space_top-1">
+      <tui-files class="tui-space_top-1 ">
         <tui-file
           *ngIf=" form.get('staticImage').valueChanges| async as file"
           [file]="file"
