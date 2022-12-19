@@ -43,7 +43,7 @@
             {{tag.name}}
           </div>
         </td>
-        <td class="tui-table__td">{{pokemon.abilities.join(',')}}</td>
+        <td class="tui-table__td pokemon-list__abilities">{{pokemon.abilities.join(',')}}</td>
         <td class="tui-table__td">{{pokemon.level}}</td>
         <td class="tui-table__td">{{pokemon.hp}}</td>
         <td class="tui-table__td">{{pokemon.attack}}</td>
@@ -51,7 +51,7 @@
         <td class="tui-table__td">{{pokemon.stamina}}</td>
         <td class="tui-table__td">{{pokemon.spd}}</td>
         <td class="tui-table__td ">{{pokemon.description}}</td>
-        <td class="tui-table__td tui-table__td_last">
+        <td class="tui-table__td tui-table__td_last pokemon-list__td-last">
           <button
             [routerLink]="[pokemon.id]"
             tuiIconButton

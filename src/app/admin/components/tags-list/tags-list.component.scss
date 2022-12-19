@@ -1,6 +1,23 @@
-.tag-list{
-  &__color{
+.tag-list {
+  padding: 0 50px;
+
+  &__color {
     width: 60px;
-    height: 15px;
+    height: 20px;
+    border-radius: 15px;
+  }
+
+  &__td-last {
+    width: 100px;
+  }
+
+  &__button {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .tag-list {
+    padding: 0 20px;
   }
 }

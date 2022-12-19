@@ -1,15 +1,21 @@
-.pokemon-list{ padding: 0 10px;
-  &__table{
+.pokemon-list {
+  padding: 0 30px;
+  width: 100%;
+
+  &__table {
     max-width: 100%;
     padding: 0 10px;
 
-    td{
+    td {
       vertical-align: middle;
     }
-
   }
 
-  img{
+  &__td-last {
+    min-width: 100px;
+  }
+
+  img {
     width: 75px;
     height: 75px;
     object-fit: cover;

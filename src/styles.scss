@@ -1,10 +1,12 @@
 @import "src/assets/styles/reset";
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Raleway:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+  font-family: 'Chakra Petch', sans-serif;
+}
+
 
 body{
   background: #F6F8FC url('https://js-pokedex-virid.vercel.app/src/pokeball-icon.png') no-repeat -180px -80px ;
-  font-family: 'Outfit', sans-serif;
 }
 
 .t-wrapper[data-appearance='danger'] {

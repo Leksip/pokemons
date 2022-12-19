@@ -1,8 +1,12 @@
 <div class="tag-form">
-<!--  Тернарный оператор-->
-  <h1>{{tagId === 'new' ? 'Создание' : 'Редактирование'}} тэга</h1>
-  <form [formGroup]='form' (ngSubmit)="onSubmit()">
-    <div>
+  <!--  Тернарный оператор-->
+  <h1 class="tag-form__title">{{tagId === 'new' ? 'Создание' : 'Редактирование'}} тэга</h1>
+  <form
+    class="tag-form__form-group"
+    [formGroup]='form'
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="tag-form__input">
       <tui-input formControlName="name">
         Название*
         <input
@@ -16,8 +20,8 @@
         </small>
       </div>
     </div>
-<!--    TODO Запретить ввод текста от юзера вместо цвета-->
-    <div>
+    <!--    TODO Запретить ввод текста от юзера вместо цвета-->
+    <div class="tag-form__input">
       <tui-input-color
         class="b-form"
         [colors]="palette"
@@ -35,7 +39,7 @@
       tuiButton
       type="submit"
       [disabled]="form.invalid"
-      [showLoader] = isSaving
+      [showLoader]=isSaving
     >
       {{tagId === 'new' ? 'Создать' : 'Редактировать'}}
     </button>

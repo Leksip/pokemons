@@ -1,6 +1,6 @@
 <div *ngIf="!isLoading; else loading">
   <div class="tag-list">
-    <table class="tui-table">
+    <table class="tui-table tag-list_table">
       <thead>
       <tr class="tui-table__tr tui-table__tr_border_none">
         <th class="tui-table__th tui-table__th_first">Id</th>
@@ -16,7 +16,7 @@
         <td class="tui-table__td">
           <div class="tag-list__color" [style.background]="tag.color"></div>
         </td>
-        <td class="tui-table__td tui-table__td_last">
+        <td class="tui-table__td tui-table__td_last tag-list__td-last">
           <button
             [routerLink]="[tag.id]"
             tuiIconButton
@@ -42,7 +42,7 @@
       routerLink='new'
       tuiButton
       type="button"
-      class="tui-space_right-3 tui-space_bottom-3"
+      class="tui-space_right-3 tui-space_bottom-3 tag-list__button"
     >
       Создать тэг
     </button>
