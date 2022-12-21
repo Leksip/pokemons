@@ -33,13 +33,12 @@ export class PokemonService {
   }
 
   update(pokemon: any, id: number): Observable<Pokemon> {
-    return this.http.put<Pokemon>(this.API_URL + this.url + `${id}/`, pokemon)
+    return this.http.patch<Pokemon>(this.API_URL + this.url + `${id}/`, pokemon)
   }
 
-  addStaticImage(file:File, id:number):Observable<any>{
+  addStaticImage(file: File, id: number): Observable<any> {
     const formData = new FormData()
     formData.append('file', file)
-    return  this.http.post(this.API_URL + this.url + `upload-static-image/${id}/`, formData)
+    return this.http.post(this.API_URL + this.url + `upload-static-image/${id}/`, formData)
   }
-
 }

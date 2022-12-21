@@ -71,7 +71,6 @@ export class PokemonFormComponent implements OnInit {
         }
       }
     )
-
     this.getTags()
   }
 
@@ -133,16 +132,14 @@ export class PokemonFormComponent implements OnInit {
     this.pokemonService.update(send, +this.pokemonId).subscribe(
       {
         next: () => {
-          this.pokemonService.addStaticImage(this.form.get('staticImage').value, +this.pokemonId).subscribe(
-            () => {
-              this.isSaving = false
-              this.router.navigate(['/admin', 'pokemon-list'])
-              this.alertService.open(`Покемон успешно отредактирован`, {
-                label: `Успешно!`,
-                status: TuiNotification.Success
-              }).subscribe();
-            }
-          )
+          if (this.form.get('staticImageUrl').value) {
+             this.next();
+          } else
+            this.pokemonService.addStaticImage(this.form.get('staticImage').value, +this.pokemonId).subscribe(
+              () => {
+                this.next();
+              }
+            )
         },
         error: () => {
           this.alertService.open('Произошла ошибка, попробуйте еще раз!', {
@@ -191,5 +188,14 @@ export class PokemonFormComponent implements OnInit {
 
   onRemoveImage() {
     this.form.get('staticImageUrl').patchValue(null)
+  }
+
+  next() {
+    this.isSaving = false
+    this.router.navigate(['/admin', 'pokemon-list'])
+    this.alertService.open(`Покемон успешно отредактирован`, {
+      label: `Успешно!`,
+      status: TuiNotification.Success
+    }).subscribe();
   }
 }

@@ -59,7 +59,7 @@
   }
 }
 
-@media screen and (max-width: 1100px){
+@media (max-width: 1100px){
   .pokemon-list{
     position: relative;
     &__info{
@@ -77,7 +77,7 @@
 }
 }
 
-@media screen and (max-width: 635px){
+@media (max-width: 635px){
   .pokemon-list{
     &__item {
       flex: unset;
