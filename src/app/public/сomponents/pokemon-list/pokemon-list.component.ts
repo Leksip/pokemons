@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {PokemonService} from "../../../admin/services/pokemon.service";
 import {Pokemon} from "../../../admin/models/pokemon";
 import {Tag} from "../../../admin/models/tag";
@@ -9,9 +9,16 @@ import {Tag} from "../../../admin/models/tag";
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent implements OnInit {
+
+  @HostListener('window:resize')
+  resize(){
+    this.windowWidth = window.innerWidth
+  }
+
   pokemons: Pokemon[] = []
   tagColor: string
   selectedPokemonId: number
+  windowWidth:number
 
   constructor(
     private readonly pokemonService: PokemonService,
@@ -19,6 +26,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.windowWidth = window.innerWidth
     this.pokemonService.getAll().subscribe(
       pokemons => {
         this.pokemons = pokemons
@@ -33,10 +41,14 @@ export class PokemonListComponent implements OnInit {
     } else
       this.selectedPokemonId = id
     this.tagColor = tags[0].color
+    if (this.windowWidth <=1100){
+      document.body.style.overflow = 'hidden'
+    }
 
   }
 
   closeMenu() {
     this.selectedPokemonId = null
+    document.body.style.overflow = ''
   }
 }

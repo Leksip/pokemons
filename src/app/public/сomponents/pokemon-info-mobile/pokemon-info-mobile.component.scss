@@ -23,6 +23,14 @@
     right: 50%;
     transform: translate(-50%,-50%);
   }
+  &__image-plug {
+    position: absolute;
+    object-fit: cover;
+    top: -20%;
+    left: 52%;
+    opacity: .85;
+    transform: translateX(-50%);
+  }
 
   &__received {
     display: flex;

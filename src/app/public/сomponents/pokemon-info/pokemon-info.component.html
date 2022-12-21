@@ -2,7 +2,9 @@
   <ng-container *ngIf="!isLoading; else loading" class="pokemon-info__not-loading">
 
     <div *ngIf="pokemon" class="pokemon-info__received wrapper ">
-      <img [src]="pokemon.staticImageUrl" [alt]="pokemon.name" class="pokemon-info__image">
+      <div *ngIf="pokemon.staticImageUrl; else pokemonImagePlug" class="pokemon-info__image">
+        <img [src]="pokemon.staticImageUrl" [alt]="pokemon.name">
+      </div>
       <h1 class="pokemon-info__received-name">{{pokemon.name}}</h1>
       <div class="pokemon-info__received-tags">
         <div class="pokemon-info__received-tag" *ngFor="let tag of tags"
@@ -76,5 +78,9 @@
     <div class="pokemon-info__loading wrapper"> Идет загрузка...</div>
   </ng-template>
 
+  <ng-template #pokemonImagePlug>
+    <img src="https://js-pokedex-virid.vercel.app/src/no-pokemon-selected-image.png" [alt]="pokemon.name"
+         class="pokemon-info__image-plug">
+  </ng-template>
 </div>
 

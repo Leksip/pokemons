@@ -6,7 +6,13 @@
     </div>
     <div class="container">
       <div *ngIf="pokemon" class="pokemon-info-mobile__received">
-        <img [src]="pokemon.staticImageUrl" [alt]="pokemon.name" class="pokemon-info-mobile__image">
+        <div *ngIf="pokemon.staticImageUrl; else pokemonImagePlug" class="pokemon-info__image">
+          <img [src]="pokemon.staticImageUrl" [alt]="pokemon.name">
+        </div>
+        <ng-template #pokemonImagePlug>
+          <img src="https://js-pokedex-virid.vercel.app/src/no-pokemon-selected-image.png" [alt]="pokemon.name"
+               class="pokemon-info-mobile__image-plug">
+        </ng-template>
         <h1 class="pokemon-info-mobile__received-name">{{pokemon.name}}</h1>
         <div class="pokemon-info-mobile__received-tags">
           <div class="pokemon-info-mobile__received-tag" *ngFor="let tag of tags"
