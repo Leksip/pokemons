@@ -2,6 +2,8 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {PokemonService} from "../../../admin/services/pokemon.service";
 import {Pokemon} from "../../../admin/models/pokemon";
 import {Tag} from "../../../admin/models/tag";
+import {debounceTime, fromEvent, map, Observable} from 'rxjs';
+import {QueryParams} from '../../../admin/models/query-params';
 
 @Component({
   selector: 'pok-pokemon-list',
@@ -14,7 +16,8 @@ export class PokemonListComponent implements OnInit {
   resize(){
     this.windowWidth = window.innerWidth
   }
-
+  isLoading = false
+  query: QueryParams[] = []
   pokemons: Pokemon[] = []
   tagColor: string
   selectedPokemonId: number
@@ -26,7 +29,25 @@ export class PokemonListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.windowWidth = window.innerWidth
+    const search$: Observable<Event> = fromEvent<Event>(
+      document.getElementById('search'),
+      'input'
+    )
+    search$.pipe(
+      map(event => {
+        this.isLoading = true
+        return (event.target as HTMLInputElement).value
+      }),
+      debounceTime(500),
+    ).subscribe(input => {
+      console.log(input)
+      this.query = [{name: 'name', value: input}]
+      this.pokemonService.getAll(this.query).subscribe(pokemons => {
+        this.pokemons = pokemons
+        this.isLoading = false
+      })
+    })
+
     this.pokemonService.getAll().subscribe(
       pokemons => {
         this.pokemons = pokemons
@@ -52,3 +73,4 @@ export class PokemonListComponent implements OnInit {
     document.body.style.overflow = ''
   }
 }
+

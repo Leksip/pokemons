@@ -3,6 +3,7 @@ import {Observable} from "rxjs";
 import {Pokemon} from "../models/pokemon";
 import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
+import {QueryParams} from '../models/query-params';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,18 @@ export class PokemonService {
     return this.http.get<Pokemon>(this.API_URL + this.url + `${id}/`)
   }
 
-  getAll(): Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(this.API_URL + this.url)
+  getAll(query?: QueryParams[]): Observable<Pokemon[]> {
+    let queryParams = ''
+    if (query) {
+      query.forEach((element, index) => {
+        if (index > 0) {
+          queryParams += '&' + element.name + '=' + element.value
+        } else {
+          queryParams += '?' + element.name + '=' + element.value
+        }
+      })
+    }
+    return this.http.get<Pokemon[]>(this.API_URL + this.url + queryParams)
   }
 
   remove(id: number): Observable<any> {
