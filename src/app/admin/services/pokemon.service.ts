@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {Pokemon} from "../models/pokemon";
+import {Pokemon, Pokemons} from '../models/pokemon';
 import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {QueryParams} from '../models/query-params';
@@ -21,7 +21,7 @@ export class PokemonService {
     return this.http.get<Pokemon>(this.API_URL + this.url + `${id}/`)
   }
 
-  getAll(query?: QueryParams[]): Observable<Pokemon[]> {
+  getAll(query?: QueryParams[]): Observable<Pokemons> {
     let queryParams = ''
     if (query) {
       query.forEach((element, index) => {
@@ -32,7 +32,7 @@ export class PokemonService {
         }
       })
     }
-    return this.http.get<Pokemon[]>(this.API_URL + this.url + queryParams)
+    return this.http.get<Pokemons>(this.API_URL + this.url + queryParams)
   }
 
   remove(id: number): Observable<any> {

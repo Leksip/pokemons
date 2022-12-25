@@ -14,14 +14,19 @@
         >
         </button>
       </div>
-      <ul class="pokemon-list__items">
-        <li class="pokemon-list__item" *ngFor="let pokemon of pokemons"
-            (click)="onSelectPokemon(pokemon.id, pokemon.tags)">
-          <pok-pokemon-card
-            [pokemon]="pokemon"
-          ></pok-pokemon-card>
-        </li>
-      </ul>
+      <div>
+        <ul class="pokemon-list__items">
+          <li class="pokemon-list__item" *ngFor="let pokemon of pokemons"
+              (click)="onSelectPokemon(pokemon.id, pokemon.tags)">
+            <pok-pokemon-card
+              [pokemon]="pokemon"
+            ></pok-pokemon-card>
+          </li>
+        </ul>
+      </div>
+      <ng-container *ngIf="isLoading">
+        <ng-container *ngTemplateOutlet="loading"></ng-container>
+      </ng-container>
     </div>
   </div>
   <div class="pokemon-list__info">
@@ -36,5 +41,13 @@
       (closeMenu)="closeMenu()"
     >
     </pok-pokemon-info-mobile>
+    <ng-template #loading>
+      <div class="animations-container">
+        <div class="yellow animation"></div>
+        <div class="red animation"></div>
+        <div class="blue animation"></div>
+        <div class="violet animation"></div>
+      </div>
+    </ng-template>
   </div>
 </div>
