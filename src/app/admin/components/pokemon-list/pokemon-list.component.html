@@ -31,7 +31,7 @@
           >
         </td>
 
-        <ng-template #pokemonImagePlug >
+        <ng-template #pokemonImagePlug>
           <img src="assets/img/pokemon-image-plug.jpg" alt="Заглушка">
         </ng-template>
 
@@ -75,6 +75,16 @@
       </tr>
       </tbody>
     </table>
+    <div>
+    <tui-table-pagination
+      [total]="total"
+      [(page)]="page"
+      [(size)]="size"
+      (paginationChange)="pagination()"
+    ></tui-table-pagination>
+    <p>Current page: {{ page + 1 }}</p>
+    <p>Items per page: {{ size }}</p>
+    </div>
     <button
       routerLink='new'
       tuiButton

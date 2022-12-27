@@ -91,11 +91,9 @@ export class PokemonListComponent implements OnInit {
     if (this.searchResult) {
       this.query.push({name: 'name', value: this.searchResult});
     }
-    this.pokemonService.getAll(
-      this.query
-    ).subscribe(
+    this.pokemonService.getAll(this.query).subscribe(
       response => {
-        this.pokemonsCount = response.count
+        this.pokemonsCount = response.count;
         this.pokemons = [...this.pokemons, ...response.pokemons];
         this.isPending = false;
         this.isLoading = false;
@@ -106,7 +104,7 @@ export class PokemonListComponent implements OnInit {
   lazyLoad(): () => void {
     return this.renderer2.listen('window', 'scroll', (e) => {
       this.screenMoving();
-      if (this.isPending ) {
+      if (this.isPending) {
         return;
       }
       const unVisible = e.target.body.scrollHeight - window.innerHeight;
