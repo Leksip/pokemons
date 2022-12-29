@@ -1,5 +1,6 @@
-<div *ngIf="!isLoading; else loading">
+<div>
   <div class="pokemon-list">
+    <tui-loader [overlay] = 'true' [showLoader]="isLoading"></tui-loader>
     <table class="pokemon-list__table tui-table">
       <thead>
       <tr class="tui-table__tr tui-table__tr_border_none">
@@ -80,7 +81,7 @@
       [total]="total"
       [(page)]="page"
       [(size)]="size"
-      (paginationChange)="pagination()"
+      (pageChange)="pagination()"
     ></tui-table-pagination>
     <p>Current page: {{ page + 1 }}</p>
     <p>Items per page: {{ size }}</p>
@@ -89,12 +90,11 @@
       routerLink='new'
       tuiButton
       type="button"
-      class="tui-space_right-3 tui-space_bottom-3"
+      class="pokemon-list__button tui-space_right-3 tui-space_bottom-3"
     >
       Создать покемона
     </button>
   </div>
 </div>
 
-<ng-template #loading class="text-center">Загрузка покемонов...</ng-template>
 

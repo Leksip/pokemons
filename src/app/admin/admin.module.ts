@@ -12,6 +12,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {TuiInputColorModule} from "@taiga-ui/addon-editor";
 import {TuiInputCountModule, TuiInputFilesModule} from "@taiga-ui/kit";
 import {TuiTablePaginationModule} from '@taiga-ui/addon-table';
+import {TuiLoaderModule} from '@taiga-ui/core';
 
 
 
@@ -34,6 +35,7 @@ import {TuiTablePaginationModule} from '@taiga-ui/addon-table';
     TuiInputCountModule,
     TuiInputFilesModule,
     TuiTablePaginationModule,
+    TuiLoaderModule,
 
   ]
 })

@@ -14,7 +14,7 @@ import {QueryParams} from '../../models/query-params';
 export class PokemonListComponent implements OnInit {
   offset: number = 0;
   query: QueryParams[] = [
-    {name: 'limit', value: 10},
+    {name: 'limit', value: 11},
     {name: 'offset', value: this.offset}
   ];
   page = 0;
@@ -74,9 +74,17 @@ export class PokemonListComponent implements OnInit {
     this.isLoading = true;
     this.pokemons = [];
     this.offset = this.page * this.size;
+
+    let limit = 11;
+
+    if (this.page !== 0){
+      this.offset +=2;
+      limit = 9;
+    }
+
     this.query = [
-      {name: 'limit', value: 10},
-      {name: 'offset', value: this.offset + 1}
+      {name: 'limit', value: limit},
+      {name: 'offset', value: this.offset}
     ];
     this.pokemonService.getAll(this.query).subscribe(response => {
         this.pokemons = response.pokemons;
