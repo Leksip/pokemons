@@ -6,6 +6,8 @@
 <img src='https://i.postimg.cc/6QmS95r7/ARHSQVHu-Kmg.jpg'>
 
 <h2>Панель администратора с функционалом создания/редактирования карточки покемона</h2>
+  
+  <p> Доступна по <a href='https://leksip.github.io/pokemons/admin'> ссылке <>
 
 <img src='https://i.postimg.cc/CxYdNwff/0-Yh6a-O7m3-EI.jpg'>
 
