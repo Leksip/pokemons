@@ -11,5 +11,11 @@
 
 <img src='https://i.postimg.cc/xTB3TJhV/o-Spt-ESN-ZZ0.jpg'>
 
+<h2>Создание и редактирование тэгов покемона</h2>
+
+<img src='https://i.postimg.cc/KvH70q22/mo-VB6-AIji-I.jpg'>
+
+<img src='https://i.postimg.cc/wxP3PS70/SPy-Fk9-X7vo-I.jpg'>
+
 </div>
 
