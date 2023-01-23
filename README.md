@@ -7,11 +7,12 @@
 
 <h2>Панель администратора с функционалом создания/редактирования карточки покемона</h2>
   
-  <p> Доступна по <a href='https://leksip.github.io/pokemons/admin'> ссылке <>
+  <p> Доступна по <a href='https://leksip.github.io/pokemons/admin'> ссылке </a>
 
 <img src='https://i.postimg.cc/CxYdNwff/0-Yh6a-O7m3-EI.jpg'>
+    
+<img src='https://i.postimg.cc/7LjJ76p8/fc6-JCfm-Sfrk.jpg'>
 
-<img src='https://i.postimg.cc/xTB3TJhV/o-Spt-ESN-ZZ0.jpg'>
 
 <h2>Создание и редактирование тэгов покемона</h2>
 
