@@ -5,11 +5,11 @@
   
 <img src='https://i.postimg.cc/6QmS95r7/ARHSQVHu-Kmg.jpg'>
 
-<h2>Панель администротаро с функционалом создания/редактирования карточки покемона</h2>
+<h2>Панель администратора с функционалом создания/редактирования карточки покемона</h2>
 
 <img src='https://i.postimg.cc/CxYdNwff/0-Yh6a-O7m3-EI.jpg'>
 
-<img src='https://i.postimg.cc/xTB3TJhV/o-Spt-ESN-ZZ0.jpg'>
+<img src='[https://i.postimg.cc/xTB3TJhV/o-Spt-ESN-ZZ0.jpg](https://i.postimg.cc/xTB3TJhV/o-Spt-ESN-ZZ0.jpg)'>
 
 </div>
 
