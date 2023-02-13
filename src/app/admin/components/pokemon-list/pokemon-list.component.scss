@@ -25,3 +25,12 @@
     margin-top: 10px;
   }
 }
+
+@media screen and (max-width: 1100px) {
+  .dn {
+    display: none;
+  }
+  .tui-table__td{
+    padding: 0;
+  }
+}

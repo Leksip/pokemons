@@ -37,7 +37,6 @@ export class PokemonListComponent implements OnInit {
         this.pokemons = response.pokemons;
         this.total = response.count;
         this.isLoading = false;
-        console.log(this.pokemons);
       }
     );
   }
@@ -77,8 +76,8 @@ export class PokemonListComponent implements OnInit {
 
     let limit = 11;
 
-    if (this.page !== 0){
-      this.offset +=2;
+    if (this.page !== 0) {
+      this.offset += 2;
       limit = 9;
     }
 

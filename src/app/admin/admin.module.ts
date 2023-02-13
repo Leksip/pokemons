@@ -15,7 +15,6 @@ import {TuiTablePaginationModule} from '@taiga-ui/addon-table';
 import {TuiLoaderModule} from '@taiga-ui/core';
 
 
-
 @NgModule({
   declarations: [
     PokemonListComponent,
@@ -36,6 +35,7 @@ import {TuiLoaderModule} from '@taiga-ui/core';
     TuiInputFilesModule,
     TuiTablePaginationModule,
     TuiLoaderModule,
+
 
   ]
 })

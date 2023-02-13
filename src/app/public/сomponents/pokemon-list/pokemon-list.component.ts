@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit, Renderer2} from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
 import {PokemonService} from '../../../admin/services/pokemon.service';
 import {Pokemon} from '../../../admin/models/pokemon';
 import {Tag} from '../../../admin/models/tag';
@@ -13,13 +13,8 @@ import {ScrollPositionService} from '../../../admin/shared/services/scroll-posit
 })
 export class PokemonListComponent implements OnInit {
 
-  @HostListener('window:resize')
-  resize() {
-    this.windowWidth = window.innerWidth;
-  }
-
   offset: number = 0;
-  listenerScroll: any; // событие дозагрузки
+  listenerScroll: any;
   isPending = false;
   isLoading = false;
   query: QueryParams[] = [
@@ -41,6 +36,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.windowWidth = window.innerWidth;
     const search$: Observable<Event> = fromEvent<Event>(
       document.getElementById('search'),
       'input'

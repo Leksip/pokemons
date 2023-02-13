@@ -5,19 +5,19 @@
       <thead>
       <tr class="tui-table__tr tui-table__tr_border_none">
         <th class="tui-table__th tui-table__th_first">Id</th>
-        <th class="tui-table__th">Изображение</th>
+        <th class="tui-table__th ">Изображение</th>
         <th class="tui-table__th">Название</th>
-        <th class="tui-table__th">Рост</th>
-        <th class="tui-table__th">Вес</th>
-        <th class="tui-table__th">Тэги</th>
-        <th class="tui-table__th">Умения</th>
-        <th class="tui-table__th">Уровень</th>
-        <th class="tui-table__th">Здоровье</th>
-        <th class="tui-table__th">Урон</th>
-        <th class="tui-table__th">Защита</th>
-        <th class="tui-table__th">Выносливость</th>
-        <th class="tui-table__th">Скорость</th>
-        <th class="tui-table__th ">Описание</th>
+        <th class="tui-table__th dn">Рост</th>
+        <th class="tui-table__th dn">Вес</th>
+        <th class="tui-table__th dn">Тэги</th>
+        <th class="tui-table__th dn">Умения</th>
+        <th class="tui-table__th dn">Уровень</th>
+        <th class="tui-table__th dn">Здоровье</th>
+        <th class="tui-table__th dn">Урон</th>
+        <th class="tui-table__th dn">Защита</th>
+        <th class="tui-table__th dn">Выносливость</th>
+        <th class="tui-table__th dn">Скорость</th>
+        <th class="tui-table__th dn">Описание</th>
         <th class="tui-table__th tui-table__th_last">Действие</th>
       </tr>
       </thead>
@@ -37,21 +37,21 @@
         </ng-template>
 
         <td class="tui-table__td">{{pokemon.name}}</td>
-        <td class="tui-table__td">{{pokemon.height}}</td>
-        <td class="tui-table__td">{{pokemon.weight}}</td>
-        <td class="tui-table__td">
+        <td class="tui-table__td dn">{{pokemon.height}}</td>
+        <td class="tui-table__td dn">{{pokemon.weight}}</td>
+        <td class="tui-table__td dn">
           <div *ngFor="let tag of pokemon.tags">
             {{tag.name}}
           </div>
         </td>
-        <td class="tui-table__td pokemon-list__abilities">{{pokemon.abilities.join(',')}}</td>
-        <td class="tui-table__td">{{pokemon.level}}</td>
-        <td class="tui-table__td">{{pokemon.hp}}</td>
-        <td class="tui-table__td">{{pokemon.attack}}</td>
-        <td class="tui-table__td">{{pokemon.defend}}</td>
-        <td class="tui-table__td">{{pokemon.stamina}}</td>
-        <td class="tui-table__td">{{pokemon.spd}}</td>
-        <td class="tui-table__td ">{{pokemon.description}}</td>
+        <td class="tui-table__td pokemon-list__abilities dn">{{pokemon.abilities.join(',')}}</td>
+        <td class="tui-table__td dn">{{pokemon.level}}</td>
+        <td class="tui-table__td dn">{{pokemon.hp}}</td>
+        <td class="tui-table__td dn">{{pokemon.attack}}</td>
+        <td class="tui-table__td dn">{{pokemon.defend}}</td>
+        <td class="tui-table__td dn">{{pokemon.stamina}}</td>
+        <td class="tui-table__td dn">{{pokemon.spd}}</td>
+        <td class="tui-table__td dn ">{{pokemon.description}}</td>
         <td class="tui-table__td tui-table__td_last pokemon-list__td-last">
           <button
             [routerLink]="[pokemon.id]"
